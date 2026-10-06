@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc Top 10 widget · example</title>
+  <meta name="color-scheme" content="light dark">
+  <style>
+    body { margin: 0; padding: 24px 16px 40px; background: #f3f6fb; color: #0b1834; font: 15px/1.5 system-ui, sans-serif; }
+    @media (prefers-color-scheme: dark) { body { background: #050b1a; color: #eef4ff; } }
+    main { max-width: 1040px; margin: 0 auto; }
+    h1 { margin: 0 0 4px; font-size: 1.6rem; }
+    h2 { margin: 0 0 10px; font-size: 1rem; }
+    p { margin: 0 0 16px; opacity: 0.8; }
+    pre { margin: 0 0 24px; padding: 12px 14px; border-radius: 10px; background: rgba(0, 0, 0, 0.06); overflow-x: auto; font-size: 0.85rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start; }
+    .narrow { max-width: 280px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Arc Top 10 widget</h1>
+    <p>The Arc Top 10 by real buyers, from Zeus Trending. This page loads the local widget.js. On your site, use:</p>
+    <pre><code>&lt;div data-zeus-top10&gt;&lt;/div&gt;
+&lt;script src="https://zeustools.app/widget.js" async&gt;&lt;/script&gt;</code></pre>
+    <div class="grid">
+      <section>
+        <h2>Your light or dark mode</h2>
+        <div data-zeus-top10></div>
+      </section>
+      <section>
+        <h2>data-theme="dark"</h2>
+        <div data-zeus-top10 data-theme="dark"></div>
+      </section>
+      <section>
+        <h2>data-theme="light", data-link="dex"</h2>
+        <div data-zeus-top10 data-theme="light" data-link="dex"></div>
+      </section>
+      <section class="narrow">
+        <h2>A narrow sidebar</h2>
+        <div data-zeus-top10 class="narrow"></div>
+      </section>
+    </div>
+  </main>
+  <script src="widget.js" async></script>
+</body>
+</html>

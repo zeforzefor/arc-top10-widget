@@ -16,7 +16,8 @@ A small, read-only card that shows the Arc Top 10 by real buyers, as ranked by
 <script src="https://zeustools.app/widget.js" async></script>
 ```
 
-Each row links to the token's chart. The footer links to [zeustools.app](https://zeustools.app).
+Each row links to the token's chart. The footer links to [zeustools.app](https://zeustools.app), or with `data-ref`
+to Zeus on Telegram with your referral link.
 
 To host the script yourself, copy `widget.js` to your site and point the `src` at your copy. It still reads
 the public API below.
@@ -30,11 +31,25 @@ Set these on the `div`:
 | `data-theme` | `dark` or `light` | the visitor's own setting |
 | `data-link` | `dex`: rows open DexScreener | the Zeus chart |
 | `data-api` | another URL that serves the same JSON | `https://zeustools.app/api/top10` |
+| `data-ref` | your referral code: the footer opens Zeus with your link | none: the footer opens zeustools.app |
 
 Pages that load cards after the script runs can call `window.ZeusTop10.mount(element)`.
 
 If your site sets a Content Security Policy, allow `https://zeustools.app` in `script-src` and
 `connect-src`, and inline styles in `style-src` (the widget adds one `<style>` element).
+
+### Your referral link
+
+Get your code with `/referral` in [@TheZeusBuybot](https://t.me/TheZeusBuybot). It is the part after `r_` in your link
+(`https://t.me/TheZeusBuybot?start=r_abc1234` → `abc1234`), 4 to 16 letters and digits. Anything else is ignored.
+
+```html
+<div data-zeus-top10 data-ref="abc1234"></div>
+<script src="https://zeustools.app/widget.js" async></script>
+```
+
+The footer then opens `https://t.me/TheZeusBuybot?start=r_abc1234`, so people who open Zeus from your card count as
+yours. The rows still open each token's chart. [zeustools.app/widget](https://zeustools.app/widget) writes this code for you.
 
 ## The API
 
